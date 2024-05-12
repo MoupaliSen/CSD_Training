@@ -1,0 +1,52 @@
+SPRING -----
+1.core concepts
+2.setter injection
+   ---injecting collections,dependency check,inner beans and scope
+list
+running the test and flow
+dependency check,inner beans ,scopes
+
+3.constructor injection
+4.using properties
+5.auto wiring
+6.stereotype annotations
+7.injecting interfaces
+
+SPRING BOOT
+Spring initializer, https://start.spring.io,pom.xml, @SpringBootApplication,
+SpringApplication.run (), Controller,@RequestMapping,@1.WEB APPLICATION
+2.SERVLETS AND JSP
+3.View resolver
+4.requestparam
+5.modelmap
+6.dispatcher servlet
+7.spring mvc web request flow
+8.web application architecture
+9.session scope,request scope
+10.session attributes
+11.jstl tags
+12.spring mvc from tag library
+13.validations
+14.initbinder
+
+Spring Rest Api:
+GET with angular front
+PUT,post with angular front
+DELETE with input validation
+MockMVC
+performance testing of jmeter
+
+Microservices:
+1.architecture
+2.implementation
+3.monitoring
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+Selenimum ---- Mahesh
+1.selenimum is a portable framework for testing web applications
+2.it is an open source web based automation testing suite
+3.it is not just a single tool but a suite a of softwares's
+it is a tool
+single standalone software
+Evaluation of selenimun:
+1.selenimum core --single origin policy: 
+2.selenimum remote control--record playback
+3.selenimum grid--exceute one application one at a time 
+                  concept of parallel execution
+4.selenimum IDE-- where selenimun is used of different types of machines and browser
+5.selenimum  web driver--conbined of all selenimum core ,selenimum remote,slenimum grid 
+6.selenimum 2 -- 
+modern selenium working on any architecture
+
+mimic:it is server like web server is download from a server 
+
+benefits:
+1.flexibility
+2.supports various operating systems,browsers and programming language
+3.supports parallel test execution that reduces time andincreases the efficiency
+4.selenium commands are categoried in terms of different classes.
+
+limitations:
+1.does not support desktop applications
+2.needed support from community forums to get the technical issues resolved.
+3.should know at least one of the supported programming languages
+4.does not have any inbuilt reporting capability
+5.not possible to perform testing on images.
+
+
+Selenimum webDriver:
+it is browser automation framework that accepts commands and sends them to a browser.
+it is implemented through a browser specific driver.
+it controls the browser by directly communicating with it is tool that automates the browser to mimic real user acttions on the web.
+
+
+IE Driver:
+
+1.Test scripts can be developed using any of the supported programming languages.
+2.can be run directly in most web browser.
+3.languages supoorted by web driver include c#,java,perl,php,python,ruby
+4.most of the  commands used in selenimum webdriver are simple and easy to implement.
+(commands are simply methods written in java language)
+5.handles navigation ,alerts /dropdowns,switching between windows etc.
+
+
+
+
+
+
+Finding element:
+element is a field,object or any item in website
+element in web browser is identified using "locators"
+locators are --- attributes,text,tag name,dynamic locator
+attributes: each elemets has 3 important attributes: id,name,class
+
+text:link text,partial link text
+
+dynamic locator:XPATH
+absolute XPATH
+relative XPATH
+
+**A Script contain:
+1.ensure relevant packages/classes are imported
+2.Invoke a browser
+3.Create instance of the web driver
+4.maximize the screen window
+5.give the URL of the webpage & launch the website
+6.wait till the web page loads
+7.find each web element u want to access
+8.invoke an action on each of those web element
+9.finally close the web driver.
+
+Commands:
+//web driver commands:
+close()
+equals()
+findElement()
+get()
+getTitle()
+getWindowHandle()
+manage()
+navigate()
+quit()
+switchTo()
+wait()
+
+
+//webElement commands:
+clear()
+click()
+findElement()
+getAttribute()
+getClass()
+getLocation()
+getSize()
+getTageName()
+getText()
+isDisplayed()
+isEnabled()
+notify()
+sendKeys()
+submit()
+wait()
+

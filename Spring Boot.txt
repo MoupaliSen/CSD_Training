@@ -1,0 +1,123 @@
+Spring Boot
+
+Spring Boot vs Spring MVC vs Spring
+
+Spring framework:Dependency Injection
+@Component,@Autowired,Component Scan etc
+
+Just Dependency injection is not sufficient 
+
+Spring modules and spring projects :extented Spring eco system
+
+
+Spring MVc(Spring Module): Simplify building web apps and rest api
+
+Building web applications with struts was very complex
+@Controller,@RestController,@ResquestMapping("/courses")
+
+Spring Boot(Spring Project):uild Production ready aapps quickly
+
+starter projects -make it easy to build variety applications
+Auto configuration-eliminate configuration to setup Spring,Spring mvc and other frameworks
+
+enable non functional requiremets(NFRs ):
+actouator: enable advanced monitoring of applications
+Embedded Server: No need for separate application servers!
+Logging and error handling
+Profiles and configuration PRoperties
+
+
+Buliding first web application with spring:
+Spring mvc(Dispatcher servlet,view resolver,model,view,controller,validations)
+
+Spring Boot(Starter,Auto Configuration)
+
+Frmaeworks/Tools(JSP,JSTL,JPA,Bootstrap,Spring security,MYSQL,H2)
+
+
+
+1.@Controller
+2.@RequestMapping()
+3.ResponseBody
+
+
+
+
+
+Model 1 Arch.
+Browser--->JSP1 & JSP2---> model
+
+disadvantages:
+1.very complex JSPs
+2.Zero separation of concerns
+3.Difficult to maintain
+
+Model 2 Arch:
+Model:data to generate the view
+view:show information to user
+Controller: Controls the flow
+
+Adavantages:Simpler to maintain
+
+Concern:where to implement common features to all controllers?
+
+Browser-->FromtController--->Servlet1,view1 & servlet2,view2 -->Model
+
+Concept:
+All requests flow into a central controller is called as Front Controller
+
+Front Controller controls flow to controller's and view's
+
+Common features can be implemented in the Front Controller.
+
+
+Spring MVC Front Controller - Dispatcher Servlet:
+A(Dispatcher servlet):Receives HTTP Requests
+B:Processes HTTP Request
+  B1:Identifies correct Controller method
+     (/login ==>LoginController.gotoLoginPage)
+     based on request URL
+  B2: Executes Controller method
+      (puts data into model)
+      returns model and view name
+  B3:Identifies correct view
+      using viewResolver(/WEB-INF/jsp/login.jsp)
+  B4: Executes view
+
+C:Returns HTTP response
+
+
+Request vs Model vs Session:
+
+Session vs Request Scopes
+
+All requests from browser are handled by our web application deployed on a server.
+
+Request Scope:
+Active for a single request only
+1.once the response is sent back ,the request attributes will be removed from memory
+2.These cannot be used for future requests
+3.Recommended for most use cases
+
+Session scope: Details stored accross multiple requests
+
+be careful about what u store in session(Takes additional memory as all details are stored on server)
+
+
+
+JSTL TAG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

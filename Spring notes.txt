@@ -1,0 +1,395 @@
+Spring: is a dependency injection framework to amke java application loosly coupled.
+remove tightly coupled
+it provides ioc(inversion of control) 
+spring framework makes the easy development of javaEE application.
+it was developed by Rod johnson in 2003.
+
+Dependency Injection: it as design pattern
+
+when a class depends on another class --
+ helping by the object 
+spring create an object of another class then inject it in present class.This technique/process is called inversion of control(object creation control).
+
+Layers:
+UI Layer --- Product Controller(send request) [Strut/JSF &&
+Spring MVC ]
+
+Business/Services layer ---product service(ProductDao dao = new ProductDao())   [Security && Transaction Mangaement]
+
+date access layer--Product Dao(contact database)  [Spring JDBC  && 
+spring ORM -- Spring + hybernet]
+DB(database)
+
+product dao inject to product service
+product service inject to product controller
+
+
+Spring Modules:
+
+Spring core -- core ,beans,context,spEL [basic like dependency injection ,ioc] it helps to inject from one class to another class
+
+context inherit all features from beans.
+spEl -- Expression language extension in jsp.
+
+AOP -- 
+Aspect
+Instrumentation
+Messaging -- methods to map 
+
+Aspect program allows to define intercepters and points cut to cleanly decoupled the code.
+
+Data Access/Integration --- JDBC ,ORM,JMS,OXM
+
+ORM -- use integration layer 
+oxm provides an abstraction layer object xml mapping
+jms -- java messaging services [messages produce and service]
+
+Web --- Web,Servlet,portlet,WebSocket
+
+Test --- helps to support unit testing and Integration testing.
+
+
+Spring IOC Container--- predefined object maintain objects lifestyle
+1.Crete the object
+2.hold the object in a memory
+3.inject them in another object if it is required.
+
+Beans 
+Config --xml configuartion 
+
+Application code
+
+ApplicationContext --- it is an interface to represent IOC container.
+class--
+1.ClasspathXMLApplicationContext-- search xml configuartion in java class path
+2.AnnotationConfigApplicationContext --serach annotation where it is used
+3.FileSystemXMLApplicationContext-- search config file 
+
+
+
+
+Dependency Injection ----
+it can be done in 2 ways--1.using setter injection
+2.using constructor injection
+
+setter injection: helps to set the value
+
+//class student{                      
+int id,
+String name,
+Address address;
+
+setId(id){}
+setName(name){}
+setAddress(address){}
+}
+
+//class Address{
+
+street,city,state,country;
+
+setStreet(street)
+setCity(city)
+setState(state)
+setCountry(country)
+}
+
+Contructor Injection--
+
+//class Student{
+String id,name,address;
+
+Student(id,name,address)
+{
+
+}
+
+}
+
+//class Address
+{
+String street,city,state,country;
+Address(street,city,state,country)
+{
+
+}
+
+}
+
+
+Configuartion File ----
+it is a xml file with beans 
+how many beans are used
+
+where we declare beans and its dependency.
+<beans>
+<bean></bean>
+<bean></bean>        bean is a simple java class.
+<bean></bean>
+<bean></bean>
+.
+.
+.
+.
+</beans>
+
+Data Types(Dependencies)------
+1.Primitive DataTypes--Byte,short,char,int,float,double,long,boolean
+2.Collection Type-- List,Set,Map and Properties
+3.Reference Type(Non primitive data type/User defined data type)--other class object.
+
+//setter injection:
+<bean class ="com.springcore.student" name ="stu">
+<property name = "id">
+<value>234</value>
+</property>
+
+<property name = "name">
+<value>abc</value>
+</property>
+
+<property name = "address">
+<value>delhi</value>
+</property>
+
+</bean>
+
+ Main class:
+
+ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+Student student1 = (Student) context.getBean("stu");
+System.out.println(student1);
+
+Property Injection:
+1.value as attribute
+2.using p schema
+
+1.value as attribute-- helps to reduce number of lines
+<bean>
+<property name = "" value =""/>
+<property name = "" value =""/>
+<property name = "" value =""/>
+</bean>
+
+2.p schema-- declare p schema [import p schema] also helps to reduce number of lines
+<bean class ="" name ="" p.id:="" p.name="" p.address=""/>
+
+
+
+///Collection Types///
+List---
+<bean>
+<property name ="">
+<list>
+<value></value>
+<value></value>
+<value></value>
+<value></value>
+</list>
+</property>
+</bean>
+
+Set--
+
+<bean>
+<property name ="">
+<set>
+<value></value>
+<value></value>
+<value></value>
+<value></value>
+</set>
+</property>
+</bean>
+
+
+Map--
+<bean>
+<property name="">
+<map>
+<entry key ="" value=""/>
+<entry key ="" value=""/>
+</map>
+</property>
+</bean>
+
+Properties--
+
+<bean>
+<property name ="">
+<props>
+<prop key ="id">234</prop>
+<prop key ="name">abc</prop>
+</props>
+</property>
+</bean>
+
+
+
+Constructor Injection---
+
+//person.java
+
+
+
+
+//Ambiguity problem-----
+when we use costructor injection then ambiguity problem will happen.
+
+explain in example
+
+//Life cycle methods:
+Spring provide two important methods to every bean
+1.public void init()
+2.public void destroy()
+
+we can change the name of these method but signature must be same.
+Initialization
+code
+Loading,
+config
+Connecting db,
+webservice etc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Autowiring
+
+Feature of spring ramework in which spring container inject dependenies automatically.
+Autowiring can't be used to inject primitive and string values.It works with reference only.
+
+two methods help in autowiring:
+1.XML ---Autowiring modes[ by default "no"
+                          byName
+                          byType
+                          constructor
+                          autodetect] it is deprecated since spring3.
+
+2.Annotations------ @Autowired
+another-- AtValuesAnnotations and qualifier annotations 
+
+Advantages:
+1.Automatic
+2.less code
+
+Disadvantage:
+1.No control of programmer
+2.it can't be used for primitive and string values
+
+
+
+Spring Standalone Collections-------
+
+//eclipse
+
+Stereotype Annotations-----
+
+
+@Component -- have to create the object
+class Student{
+
+}
+
+<context:component-scan base-package=""/>
+
+
+collections uses with value 
+
+
+
+//Bean Scope
+singleton --- means to create one object
+prototype --- eveytime u call the object bean create new object all time
+<bean class =" " name =" " scope =" "/>
+@Component
+@Scope(" ")
+request
+session
+globalsession
+
+
+
+//Spring Expression Language
+
+Supports parsing and executing expression with the value of @Value annotations
+
+Expression                             @value("#{expression}")
+
+Classes,variables,methods,constructors and objects
+and symbols
+
+char,numerics,operators,keywords and special symbols which returs a value
+
+
+static methods 
+object methods
+variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
