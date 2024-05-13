@@ -1,0 +1,26 @@
+Mouse Actions
+1.Mousehover-- moveToElement()
+2.Right click --contextClick(Element)
+3.Double click --DoubleClick(Element)
+4.Drag & drop  -- source and target element 
+dragAndDrop(source,target)
+5.slider --- dragAndDropBy(Element,x,y)
+min_slider  
+max_slider
+
+
+using Actions class -- predefind class in selenium.
+
+build() == create an action
+perform() == perform an action
+
+
+getText() -- return inner textof the element
+
+getAttribute() -- return any value of the attribute
+
+difference between build() and perform()
+
+difference between Actions vs ActionInterface
+Actions is class and it is used to store mouse action
+Action Interface is an interface and to store the variale 

@@ -1,0 +1,23 @@
+Page object model----
+
+is a pattern how we can manage test case how mange webelement in framework
+is a way of organising web element
+
+page object classes contains page elements +actions methods
+
+problems:
+1.duplication of elements/locator
+2.updation
+change will not effect in every updation of test cases
+
+
+1.total no of pages in ur application
+2.every page separate class
+
+advantages:
+we can reuse in multiple test ,avoid duplication
+
+implementation / two approaches:
+1.Normal approach without using page factory
+2.using page factory
+

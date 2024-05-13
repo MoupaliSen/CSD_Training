@@ -1,0 +1,8 @@
+Keyboard Actions:
+
+ctrl+a
+ctr+c
+tab
+ctrl+v
+
+switch window  using open new tab + open new window

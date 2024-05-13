@@ -1,0 +1,269 @@
+Selenium web driver:
+1.Web driver is one of the component in selenium 
+2.web driver is an java interface which contains all abstract methods,static methods,default methods
+
+SearchContext(I) is the first interface they have designed.//parent interface
+|
+|
+webDriver(I) is an interface //child interface
+
+
+
+//classBrowser testing : same testcase which will execute on multiple browser.
+
+Every browser has its own class
+
+Firefoxbrowser --- FirefoxDriver
+
+ChromeDriver---chromeDriver
+Edge browser---EdgeDriver
+IE----InternetExplorerDriver(deprecated)
+
+3.WebDriver is an API(Application programming interface)[Api is basically an interface between two application. it is basically an mediator between two applications[application and database]
+works---it gets the request from the user and according to the request it will fetch the data in the database and servers and corresponding data it will send to the user in the form of response.
+name justification:
+3 different types of layer:
+1.DB layer(database layer)
+2.BL layer(business logic layer)[programming layer]
+3.PL layer(presentation layer) -- user always communicate with presentation layer
+
+API contains so many classes ,so many methods which contains buisness logic
+
+]
+**why webdriver is an API?
+It is a mediator between automation script and browser that's why it is called as an API..
+
+Selenium has 3 component:
+1.selenium webdriver -- main component of selenium,it is used for web applications which help to develop Automation script
+2.selenium IDE -- record and playback tool
+3.Selenium Grid -- remote enviroment if u want to execute your test cases on different machine and different browser 
+
+Selenium is not a tool. it is a collection of component.
+
+//Selenium Client Library: web driver contains so many classes and so many methods those are binding together in the form of jar file it is called as selenium client library.
+
+//Browser specific drivers: executable files
+//Browsers(chrome,edge,firefox,....)
+
+
+why u create maven project why not java project?
+
+if u r using maven project u don't have to download any client library.
+if u r using java project u will have to download client library,browser specific drivers....
+
+
+
+
+//Locators:
+1.identifying elements - locators
+2.Perform actions -methods
+
+Locator -- locate the web elemets
+1.we can identify various elements on the web using locators
+2.locators are addresses that identify a web element uniquely within the page
+
+Types of locators: 2 types
+1.Normal Locators  -- id,name,linktext , partialLinktext ,ClassName,TagName
+2.Customized locators-- CSS Selector,Xpath
+
+CSS selector -- Tag and ID , Tag and class, Tag and attribute,Tag ,class and attribute
+
+Xpath --Absolute Xpath,Relative Xpath
+Absolute XPath: Begins from the root of the HTML document and specifies the complete path to the element. It's not as flexible and can break if the page structure changes. 
+Relative XPath: Starts from a specific element and navigates through the DOM hierarchy to locate the desired element.
+
+
+
+why avoid to use partial linktext?
+linkText() – locates the links based on the exact match of the link's text provided as a parameter. By. partialLinkText() – locates links based on the partial text match of the link's text.
+
+//List.size() = List,Set,HashMap
+
+
+
+//CSS Selector():
+driver.findElement(By.cssSelector(selector))
+
+1.tag id   #    Ex :input#small-seachterms ------ seachtems is the value of the id              #classname
+
+2.tag class  .  ex:input.className
+                   .classname
+ 
+3.tag attribute  []  ex: input[placeholder="serach store"]   it uses other than id,class like text ,placeholder,name
+
+4.tag class attribute  .[]  input.search-box-text[name = "q"]
+
+
+
+//Methods
+1.get methods
+2.conditional methods
+3.navigational methods
+4.browser methods
+5.wait methods
+
+
+1.get methods --we can access these methods through webdriver instance
+get is a command to way to launch our webpages
+
+get(url)
+getTitle()
+getCurrentURL()
+getPageSource()
+getWindowHandle() -- return id of the particular single browser window--return the string ,handle single browser window id everytime it will create different id.it cannot switch to 1st to 2nd web page.
+getwindowHandles() -- return id of the multiple browser window -return set of string.different types of switching commands are there
+
+**browserid it uses for switching commands
+
+
+2.Conditional commands  --access these commands through webelements
+returns true/false(boolean values)
+
+isDisplayed() -- it returns true if webelements is present, it returns false if web elements is not present
+isEnabled() --it checks like popups are enabled or not
+isSelected() --it checks for radio button
+
+
+3.Browser methods --
+
+1.close() --close the current/Single browser window  //it will give an warning SocketException
+
+browser focus on 1st browser window that's why it will not close 2nd browser window
+
+2.quit()---close the multiple browser window.
+
+
+if i want to close specific browser window then, using windowid for switching command.
+
+
+
+4.wait commands:wait statements will be used to solve the synchronizantion problem.
+Thread.sleep(ms)
+
+sleep():provided by java itself(not selenium command).
+
+advantages of sleep() :
+1.easy to use
+
+disadvantagesof sleep():
+1.if the time is not sufficient then u will get exception
+2.it will wait of maximum time out.this will reduce the performance script
+3.multiple times.
+
+
+
+
+
+1.Implicit wait --applicable for all the every statement  in the automation script.
+advantages ---1.single time /one statement
+2.it will nit wait till maximum time if the elememt is available
+3.applicable for all the elements
+4.easy to use
+disadvantages--
+1.if the time is not sufficient then u will get exception.
+2.
+
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
+**basicially sleep & implicitwait is a time specified
+
+2.Explicit wait -- basically it is a conditional specified
+it has 2 parts 
+i)declaration
+WebDriverWait mywait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
+ii)usage
+
+how to declare explicitwait():
+WebDriverWait mywait = new WebDriverWait(driver,Duration.ofSeconds(10));
+WebElement username = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Username']"))));
+        username.sendKeys("Admin");
+        
+WebElement password = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Username']"))));
+        username.sendKeys("admin123");
+
+
+advatages: 
+1.it based on conditional based,it will work more effectively.
+disadvantages:
+2.finding element is inclusive.
+3.it will wait for condition to be true,the consider the time 
+disadvantages: 
+
+
+Fluent wait: another flavour of explicit wait.
+
+it has also 2 parts:
+1.declaration
+2.usage
+
+declaration:
+Wait<WebDriver> mywait = new FluentWait<WebDriver>(driver)
+                         .withTimeOut(Duration.ofSeconds(30))
+                         .pollingEvery(Duration.ofSeconds(5))
+                          .ignoring(NoSuchElementException.class);
+
+
+
+another declaration:
+WebElement username = mywait.until(new Function<WebDriver,WebElement>()
+{
+   public WebElement apply(WebDriver driver)
+     {
+			        	  
+           return driver.findElement(By.xpath("//input[@placeholder='Username']"));
+			        	  
+ }
+   });
+
+polling means :within every 5 seconds it will check element is present or not if element is find then return this .
+if element is not availbale then it will throw exception.
+
+fluentwait gives polling and ignoring exception
+
+
+
+sleep():provided by java itself(not selenium command).
+
+advantages of sleep() :
+1.easy to use
+
+disadvantagesof sleep():
+1.if the time is not sufficient then u will get exception
+2.it will wait of maximum time out.this will reduce the performance script
+3.multiple times.
+
+
+
+
+**q.difference betwwen sleep() and implicit wait()
+
+
+
+
+
+
+5.Navigational Commands:
+1.navigate().to(url) -- same as driver.get(url)
+it accept string format ,url formal [like URL muurl = new URL("https://www.google.com")]
+
+difference between driver.get(url) and navigate.to(url)
+ 
+driver.get(url) accepts only string format
+navigate.to(url) accepts only string and url 
+
+2.navigate().forward() -- 
+
+3.navigate().back()
+4.navigate().refresh()
+
+driver.navigate().to(url);
+drivber.manage().window().maximize();
+
+
+
+
+
+
+

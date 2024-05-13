@@ -1,0 +1,83 @@
+Cucumber  Basics
+----------------
+TDD -- Test driven development -- mainly focus on testing part
+focus on internal testing , only technical people understand that code
+
+Ex:(TestNG,JUnit)
+
+BDD -- behavioural driven development -- focus functionality and features of the appliction
+Ex: Cucumber,Jbehave,serity etc...
+everybody(technical +non technical) all people understand
+
+Cucumber -- predifend framework.it supports BDD approach
+cucumber is a tool BDD is a project
+
+
+Team---
+1.stakeholder/customer(no-tech)
+2.product manager(non-tech)
+3.project manager-(non -tech)
+4.tester- tech
+5.developer-- tech
+6.scrum master -- non tech
+
+
+3 different files in BDD--
+1.Feature file
+2.step definitions file
+3.Test Runner file
+
+Feature file -- contains different scenarios(step by step application)
+login.feature -- login with invalid scenarios and valid scenarios
+
+Gherkin keywords -- they will write senarios inside feature file.it contains keywords
+ex: Given,When,Then,And,Scanario .............these keywords come under Gherkin language.
+
+Every test case contains pre-condition,actions,validation
+
+Pre-condition -- Given
+actions -- When
+validation --Then
+
+extension =filename.feature
+
+Ex:
+Login.feature
+------
+
+Feature : User login
+
+Scenario: Successful login
+       Given the user open the application
+       And the user is on the login page
+       When the user entered valid user name and valid password
+       When the user clicked on submit buttton
+       Then the user should see my account page
+
+Scenario: Unsuccessful login
+       Given the user open the application
+       And the user is on the login page
+       When the user entered invalid user name and invalid password
+       When the user clicked on submit buttton
+       Then the user should see error on the login page
+
+
+
+  --------
+
+Step Definition File -- contains different method Which are represent to steps in feature file  
+
+Test Runner file --
+
+testRunnerclass --> feature file,steps,report etc
+
+//Cucumber works on Junit
+
+when u create maven create what is ur first work?
+to add dependencies in POM.XML
+
+
+cucumber dependencies name : cucumber -java, cucumber-junit
+
+
+

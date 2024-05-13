@@ -1,0 +1,13 @@
+Frame in selenium:
+
+iframe: which is having some content it is coming from different source
+
+driver.switchTo().frame("name of the frame"/id of the frame)
+driver.switchTo().frame(WebElement)
+driver.switchTo().frame(0)
+
+driver.switchTo().parentFrame();
+
+driver.switchTo().defaultContent();//go back from frame
+
+

@@ -1,0 +1,47 @@
+Alerts /Popups
+
+Alert:
+1.alert with "ok"
+Alert alertwindow =driver.switchTo().alert();
+		alertwindow = mywait.until(ExpectedConditions.alertIsPresent());
+		System.out.println(alertwindow.getText());
+		
+alertwindow.accept(); //this will close alert window using "ok" button
+alertwindow.dismiss();//this will close window with using "cancel" button
+2.alert with "ok" and "cancel"
+
+3.alert with inputbox along with ok & cancel
+driver.findElement(By.xpath("//button[normalize-space()='click for JS Prompt']"));
+		Alert alertwindoww = driver.switchTo().alert();
+		System.out.println(alertwindoww.getText());
+		alertwindow.sendKeys("Welcome");
+		alertwindow.accept();
+		
+		//validation
+		String act_text =driver.findElement(By.xpath("//p[@id='result']"));
+		String exp_text ="you entered:welcome";
+		if(act_text.equals(exp_text))
+		{
+			System.out.println("test passed");
+		}
+		else
+		{
+			System.out.println("test failed");
+
+		}
+		alertwindow.dismiss();
+4.alert with no elements
+Alert alertwindowww = driver.switchTo().alert();
+
+
+Popups:
+String text =driver.findElement(By.xpath("//p[contains(text(),'congratulations!')]")).getText();
+		if(text.contains("congratulations"))
+		{
+			System.out.println("successfull login");
+		}
+		else
+		{
+			System.out.println("failed login");
+	
+		}

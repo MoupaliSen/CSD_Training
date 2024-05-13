@@ -1,0 +1,20 @@
+JavaScript Executor --- interface
+
+method:
+executeScript() --execute javascript statement in selenium  using this method
+
+why javascript executor is required?
+sometimes webdriver may not interact with elements because of delay then we r using javascript executor directly.
+
+JavascriptExecutor js = (JavascriptExecutor)driver;
+
+
+//when u r using chrome driver we no need to type cast it
+JavascriptExecutor js = driver;
+
+
+difference between javascript executor vs css and xpath
+css & xapth are using to finding the element
+javascript executor is used for performing action of the element
+
+when it will show ClickInterruptException then u will use javascript executor

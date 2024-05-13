@@ -1,0 +1,94 @@
+Selenium coding steps:
+1.System.setProperty("webdriver.chrome.driver","location ");
+//if u don't find location then
+add dependency
+<dependency>
+<groupId>io.github.aaaa</groupId>
+<artifactId>Webdrivermanager</artifactId>
+<version>5.3.1</version>
+</dependency>
+
+then main function
+WebDriverManger.chromedriver().setup();
+//Launch Browser
+2.chromeDriver driver = new chromeDriver();
+or webDriver driver = new ChromeDriver();
+
+
+3.//open the url on the browser
+driver.get("orangeHRM")
+driver.manage().window().maximize(); //chain method
+Thread.sleep(500);
+
+4.Username and password put it
+5.Find some element
+WebElement txtUsername =driver.findElement(By.name("value"));
+
+6.txtUsername.sendKeys("Admin");
+
+combine 5&6
+driver.findElement(By.name("value")).sendKeys("Admin"));
+
+7.driver.findElement(By.name("password")).sendKeys("admin123"));
+
+*Synchronizantion Problem
+*Xpath represents address of the element
+8.driver.findElement(By.xpath("")).click();
+
+9.verify title of the dashboard page
+//Title validation 
+String act_title = driver.getTitle();
+String exp_title ="OrangeHRM";
+
+if(act_title.equals(exp_title))
+{
+  System.out.println("Test passed");
+}
+else
+{
+  System.out.println("Test Failed");
+}
+}
+//lable validation after successful login
+try{
+String act_label = driver.findElement(By.xpath("")).geText();
+}
+catch(NoSuchElementException e)
+{
+ act_lebel ="";
+}
+String exp_title = "DashBoard";
+if(act_title.equals(exp_title))
+{
+  System.out.println("Test passed");
+}
+else
+{
+  System.out.println("Test Failed");
+}
+}
+
+
+
+10.closing the browser
+driver.close(); //it will throw socketException
+
+driver.quit();
+
+
+
+1.why use select tag?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

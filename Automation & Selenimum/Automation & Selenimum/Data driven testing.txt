@@ -1,0 +1,22 @@
+Data driven testing:
+
+Apache poi -- used for automating ms documents -excel
+reading data from excel
+writing data into excel -utility file -->is a java file have some resuable methods
+
+Excel File-->Workbook-->sheets-->rows-->columns
+
+FileInputStream --read data       
+FileOutputStream --writing data
+
+
+XSSFWorkbook
+XSSFSheet
+XSSFRow
+XSSFCell
+
+
+how to read the data:
+current data location :
+System.getProperty("user.dir")+"\\testdata\data.xlsx"
+

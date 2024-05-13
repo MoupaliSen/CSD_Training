@@ -1,0 +1,15 @@
+Broken link?how to handle that?
+The link whenever u send the request from the server if u get the server code or status code 400 to 500 it is called "broken link".
+
+
+Capture screenshot:
+
+//full screenshots
+//speific area screenshot
+
+
+Headless testing:
+without UI executing the testcases backend.
+advantages:Execution is very fast.
+disadvantages:we can't explore the functionality / we can't see the actions/validations
+

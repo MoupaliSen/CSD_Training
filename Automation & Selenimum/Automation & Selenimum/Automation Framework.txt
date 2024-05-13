@@ -1,0 +1,70 @@
+Automation Framework
+
+we organize automation project files/folder in structured manner
+
+objectives:
+1.Re -usability
+2.Maintainability
+3.Readability
+
+
+Types of Frameworks:
+1.Built -in -- provides basic feature in automation
+  ex - testing,junit,cucumber etc.
+
+2.customized(user defined)-- the user create according to their requirement.
+wec can create our own way like creating folder structure,names, files,utility file
+ex: modulat framework,data-driven,keyword driven,hybrid driven etc..
+
+Hybrid driven framework -- populate customized framework,
+
+
+Different phases of framework:
+
+1.Analysing AUT(Application under test)----
+
+--Number of pages
+--what are all elements/how/type
+--what to automate/what we cannot automate
+
+2.choose test cases for automation-----
+
+1.focus on sanity test cases(basic functionality check of application)--priority 1
+2.data driven test cases  -- executes multiple sets of data
+Re testing -- test executes multiple times
+3.Regression test cases 
+4.any other test cases
+
+
+3.Design and Development of framework
+
+4.Execution--local,remote
+
+5.Maintenance --
+
+e-Commerence domain-- domains are available in market like bank finance ,telephone,internet
+
+two types of operations
+1.frontend operations(customers/users)
+ --register an account
+ --login
+--search for the product
+--add/edit/delete products from cart
+--order products
+--reviews
+etc....
+
+2.backend operations(admins/backend teams)
+--products
+--customers
+--orders
+--store
+
+
+
+
+
+
+
+
+
